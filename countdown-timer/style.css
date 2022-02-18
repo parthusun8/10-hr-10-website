@@ -65,6 +65,7 @@ h1 {
     height: 31px;
     width: 350px;
     border-radius: 6px;
+    outline: none;
     border: none;
     background: transparent;
     border-bottom: 0.4px solid black;
@@ -72,6 +73,7 @@ h1 {
     margin: 0.5rem 0rem;
     font-size: larger;
 }
+
 #form button {
     cursor: pointer;
     height: 31px;
