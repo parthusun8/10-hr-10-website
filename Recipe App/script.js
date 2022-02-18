@@ -1,11 +1,7 @@
 const searchButton = document.getElementById('search');
 const searchTerm = document.getElementById('search-text');
-
 const mealsEl = document.getElementById('meals');
-
 const favouriteContainer = document.getElementById("fav-meals");
-
-
 getRandomMeal();
 fetchFavMeals();
 
@@ -66,6 +62,20 @@ function addMeal(mealData, random = false) {
         }
     });
 
+    const recipeEl = meal.querySelector('.meal-header img');
+    recipeEl.addEventListener("click", ()=>{
+        meal.innerHTML = '';
+        meal.innerHTML = `<img src="${mealData.strMealThumb}" alt="PHOTO" class="descrpition-photo">
+        <p class="recipe">${mealData.strInstructions}</p>
+        <button class="go-back"> See recipe List </button>
+        `;
+
+        const back = meal.querySelector(".go-back");
+        back.addEventListener("click", ()=> {
+            location.reload();
+        });
+    });
+
     mealsEl.appendChild(meal);
 }
 
@@ -107,7 +117,7 @@ function addMealToFav(mealData) {
     const Favmeal = document.createElement('li');
 
     Favmeal.innerHTML = `
-            <img src="${mealData.strMealThumb}" alt="${mealData.strMeal}">
+            <img src="${mealData.strMealThumb}" alt="${mealData.strMeal} class="descrpition-photo">
             <span>${mealData.strMeal}</span>
             <button class="clear"><i class="fas fa-window-close"></i></button>
     `;
@@ -125,7 +135,6 @@ function addMealToFav(mealData) {
     
 }
 
-// console.log(searchButton, searchTerm);
 searchButton.addEventListener("click",async () => {
 
     mealsEl.innerHTML = '';

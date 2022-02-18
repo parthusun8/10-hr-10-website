@@ -161,3 +161,15 @@ header button {
 .meal-body .fav-btn .active {
     color: rebeccapurple;
 }
+
+.descrpition-photo {
+    object-fit: contain;
+    height: 200px;
+    width: 100vh;
+    background-color: inherit;
+}
+
+.recipe {
+    font-weight: 900;
+    font-size: 15px;
+}
