@@ -65,6 +65,9 @@ h1 {
     height: 31px;
     width: 350px;
     border-radius: 6px;
+    border: none;
+    background: transparent;
+    border-bottom: 0.4px solid black;
     box-shadow: 0.4rem 0 1rem 0 rgb(208 241 240 / 90%);
     margin: 0.5rem 0rem;
     font-size: larger;
