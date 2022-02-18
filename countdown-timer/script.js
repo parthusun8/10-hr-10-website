@@ -1,11 +1,37 @@
-const newYears = '17 Feb 2022';
+const nameofEvent = document.getElementById('text');
+const date = document.getElementById('Date');
+const month = document.getElementById('month');
+const year = document.getElementById('Year');
+// console.log(nameofEvent, date, month, year);
+const button = document.getElementById('show');
+
+const container = document.getElementById('countdown-container');
+const form = document.getElementById('form');
+
+let eventName = '';
+let dateofEvent = 1;
+let monthofEvent = '';
+let yearofEvent = 2023;
+
+button.addEventListener("click", ()=>{
+    eventName = nameofEvent.value;
+    dateofEvent = date.value;
+    monthofEvent = month.value;
+    yearofEvent = year.value;
+
+    form.innerHTML = '';
+
+    
+    setInterval(countdown, 1000);
+});
 
 function countdown() {
-    const newYearsDate = new Date(newYears);
+    
+    container.innerHTML = `<h1>${eventName} in -></h1>`;
+    const DateFinal = `${dateofEvent} ${monthofEvent} ${yearofEvent}`;
+    const newYearsDate = new Date(DateFinal);
     const currentDate = new Date();
     let diff = newYearsDate - currentDate;
-
-    // const seconds = (newYearsDate - currentDate)*1000;
 
     let hours = Math.floor( diff/ 3600000);
     let days = 0;
@@ -19,18 +45,40 @@ function countdown() {
     diff = diff%60000;
     const seconds = Math.floor(diff/1000);
 
-    console.log(days, hours, minutes, seconds);
+    
+    const parent = document.createElement('div');
+    parent.classList.add('parent-div');
 
-    document.getElementById("days").innerText = formatTime(days);
-    document.getElementById("hours").innerText = formatTime(hours);
-    document.getElementById("minutes").innerText = formatTime(minutes);
-    document.getElementById("seconds").innerText = formatTime(seconds);
+    parent.innerHTML = `
+        <div class="span-el days-c">
+        <p class="big-text" id="days">${formatTime(days)}</p>
+        <span>Days</span>
+        </div>
+        <div class="span-el hours-c">
+            <p class="big-text" id="hours">${formatTime(hours)}</p>
+            <span>Hours</span>
+        </div>
+        <div class="span-el min-c">
+            <p class="big-text" id="minutes">${formatTime(minutes)}</p>
+            <span>Minutes</span>
+        </div>
+        <div class="span-el sec-c">
+            <p class="big-text" id="seconds">${formatTime(seconds)}</p>
+            <span>Seconds</span>
+        </div>
+    `;
+
+    if(days <= 0 && hours <= 0 && minutes <= 0){
+        parent.innerHTML = '';
+        container.innerHTML = 'Enter A Time/Day Later than Today';
+    }
+    container.appendChild(parent);
 }
 
 function formatTime(time){
     return time<10 ? (`0${time}`) : time;
 }
 
-countdown();
+// countdown();
 
-setInterval(countdown, 1000);
+// setInterval(countdown, 1000);

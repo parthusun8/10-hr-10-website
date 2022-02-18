@@ -19,12 +19,13 @@ body{
 }
 
 h1 {
+    position: relative;
     font-weight: normal;
     font-size: 4rem;
     margin-top: 5rem;
 }
 
-.countdown-container{
+.parent-div{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -44,4 +45,36 @@ h1 {
 
 .span-el span{
     font-size: 1.5rem;
+}
+
+#countdown-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#form input {
+    height: 31px;
+    width: 350px;
+    border-radius: 6px;
+    box-shadow: 0.4rem 0 1rem 0 rgb(208 241 240 / 90%);
+    margin: 0.5rem 0rem;
+    font-size: larger;
+}
+#form button {
+    cursor: pointer;
+    height: 31px;
+    width: 250px;
+    background-color: transparent;
+    border: none;
+    margin: 0.5rem 0rem;
+    font-size: larger;
 }
