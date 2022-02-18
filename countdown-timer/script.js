@@ -71,7 +71,11 @@ function countdown() {
     if(days <= 0 && hours <= 0 && minutes <= 0){
         parent.innerHTML = '';
         container.innerHTML = 'Enter A Time/Day Later than Today';
+    } else if(!hours){
+        parent.innerHTML = '';
+        container.innerHTML = 'Enter A Time/Day Later than Today';
     }
+    console.log(!hours);
     container.appendChild(parent);
 }
 
