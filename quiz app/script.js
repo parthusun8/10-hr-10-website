@@ -1,36 +1,5 @@
 const questions = [
-    {
-        question: "What is the most used programming language in 2019?",
-        a: "Java",
-        b: "C",
-        c: "Python",
-        d: "JavaScript",
-        correct: "d",
-    },
-    {
-        question: "Who is the President of US?",
-        a: "Florin Pop",
-        b: "Donald Trump",
-        c: "Ivan Saldano",
-        d: "Mihai Andrei",
-        correct: "b",
-    },
-    {
-        question: "What does HTML stand for?",
-        a: "Hypertext Markup Language",
-        b: "Cascading Style Sheet",
-        c: "Jason Object Notation",
-        d: "Helicopters Terminals Motorboats Lamborginis",
-        correct: "a",
-    },
-    {
-        question: "What year was JavaScript launched?",
-        a: "1996",
-        b: "1995",
-        c: "1994",
-        d: "none of the above",
-        correct: "b",
-    },
+    
 ];
 
 const questionEl = document.getElementById('question');
@@ -40,12 +9,15 @@ const b_text = document.getElementById('b_text');
 const c_text = document.getElementById('c_text');
 const d_text = document.getElementById('d_text');
 
+
+const c_opt = document.getElementById('option-c');
+const d_opt = document.getElementById('option-d');
+
 const submitBtn = document.getElementById('button');
 
 let currentQuestion = 0;
 let score = 0;
 
-loadQuiz();
 
 function loadQuiz() {
 
@@ -55,8 +27,19 @@ function loadQuiz() {
     questionEl.innerText = currentQuizData.question;
     a_text.innerText = currentQuizData.a;
     b_text.innerText = currentQuizData.b;
-    c_text.innerText = currentQuizData.c;
-    d_text.innerText = currentQuizData.d;
+
+    console.log(currentQuizData.c, currentQuizData.d);
+    if(currentQuizData.c != null){
+        c_text.innerText = currentQuizData.c;
+    } else{
+        c_opt.innerHTML = '';
+    }
+
+    if(currentQuizData.d != null) {
+        d_text.innerText = currentQuizData.d;
+    } else{
+        d_opt.innerHTML = '';
+    }
 
 }
 
@@ -77,6 +60,7 @@ function deselectAnswers() {
         answerEl.checked = false;
     });
 }
+
 
 submitBtn.addEventListener("click", () => {
     // check to see the answer
@@ -100,3 +84,26 @@ submitBtn.addEventListener("click", () => {
         }
     }
 });
+
+const url = "https://quizapi.io/api/v1/questions";
+const API_KEY = "uNSTvtWrAtH6N8YiDLwotnt5rT2kwGN0Zm3umrCb";
+fetchQuestions();
+async function fetchQuestions() {
+    const resp = await fetch(`${url}?apiKey=${API_KEY}&category=${"code"}&difficulty${"easy"}&limit=10`);
+    const respData = await resp.json();
+
+    // console.log(respData);
+    respData.forEach((response) => {
+        // console.log(response);
+        questions.push({
+            question: response.question,
+            a: response.answers.answer_a,
+            b: response.answers.answer_b,
+            c: response.answers.answer_c,
+            d: response.answers.answer_d,
+            correct: (response.correct_answer === "answer_a" ? "a" : (response.correct_answer === "answer_b" ? "b" : (response.correct_answer === "answer_c" ? "c" : "d"))),
+        });
+    });
+
+    loadQuiz();
+}
