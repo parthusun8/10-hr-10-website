@@ -4,6 +4,97 @@
     box-sizing: border-box;
 }
 body{
+    background-color: #7BDAF3;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* justify-content: center; */
     font-family: "Poppins", sans-serif;
     margin: 0;
+    /* overflow-y: hidden; */
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+  
+
+.notes {
+    background-color: #ECFAF5;
+    margin: 22px;
+    height: 292px;
+    width: 338px;
+    margin-top: 4rem;
+}
+
+.notes .tools {
+    background-color: #9EC862;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem;
+}
+
+.notes .tools button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+.notes .main {
+    overflow: hidden;
+    background-color: #ECFAF5;
+    /* display: none; */
+    height: 292px;
+    width: 100%;
+}
+
+.notes textarea {
+    color: #AEB6B4;
+    outline: none;
+    font-family: inherit;
+    border: none;
+    height: 292px;
+    width: 100%;
+    resize: none;
+    overflow: hidden;
+    background-image: linear-gradient( 32deg, rgba(252,255,222,1) 2.2%, rgb(182 241 171 / 30%) 99.3% );
+}
+
+.notes .hidden{
+    display: none;
+}
+span {
+    margin-left: 6px;
+    font-weight: 100;
+}
+
+#add {
+    cursor: pointer;
+    background-color: #9EC862;
+    border-radius: 28px;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    position: fixed;
+    top: 1rem;
+    right: 10rem;
+    height: 56px;
+    width: 139px;
+}
+
+#save {
+    cursor: pointer;
+    background-color: #9EC862;
+    border-radius: 28px;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    height: 56px;
+    width: 139px;
 }
