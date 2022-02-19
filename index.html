@@ -6,55 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All 10 Websites</title>
     <style>
-        .list {
-            display: flex;
-            flex-direction: column;
-            margin-top: 5rem;
-            margin-left: 2rem;
-            display: flex;
-            flex-direction: row;
-        }
         a {
-            text-decoration: none;
+          text-decoration: none;
+        }
+        li{
+          display: flex;
+          flex-direction: column;
+          /* align-items: center; */
+          margin-top: 17px;
+          justify-content: center;
         }
         span {
-            font-size: large;
-            color: white;
-            margin: 1rem 1rem;
-            text-align: center;
-            width: 100%;
+          text-decoration: underline;
+          color: black;
+          font-size: 2rem;
         }
-        .list img {
-          height: 250px;
-          width: 450px;
-          object-fit: contain;
+        iframe {
+          margin-left: 5%;
+          height: 90vh;
+          width: 90%;
+          border: none;
         }
     </style>
   </head>
-  <body bgcolor="black">
+  <body>
     <div class="container">
-      <div class="list">
-        <a href="./Base Project/index.html">
-          <img src="./images/base-project.jpeg" alt="">
-          <span>Base Project</span></a>
-      </div>
-      <div class="list">
-        
-        <a href="./countdown-timer/index.html">
-          <img src="./images/countdown.jpg" alt="">
-          <span>COUNT-DOWN TIMER</span></a>
-      </div>
-      <div class="list">
-        
-        <a href="./quiz app/index.html">
-          <img src="./images/quiz.jpeg" alt="">
-          <span>QUIZ APP</span></a>
-      </div>
-      <div class="list">
-        
-        <a href="./Recipe App/index.html">
-          <img src="./images/recipe.jpeg" alt="">
-          <span>RECIPE APP</span></a>
-      </div>
+      <ul>
+        <li><a href="./countdown-timer/index.html"><span>1. COUNT-DOWN TIMER</span></a>
+          <iframe src="https://10-hr-10-website.vercel.app/countdown-timer/index.html"></iframe>
+        </li>
+        <li><a href="./quiz app/index.html"><span>2. QUIZ APP</span></a>
+          <iframe src="https://10-hr-10-website.vercel.app/quiz%20app/index.html"></iframe>
+        </li>
+        <li><a href="./Recipe App/index.html"><span>3. RECIPE APP</span></a>
+          <iframe src="https://10-hr-10-website.vercel.app/Recipe%20App/index.html"></iframe>
+        </li>
+      </ul>
+    </div>
   </body>
 </html>
