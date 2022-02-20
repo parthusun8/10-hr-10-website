@@ -1,4 +1,4 @@
-const API_URL = "http://api.weatherapi.com/v1";
+const API_URL = "https://api.weatherapi.com/v1";
 
 const API_KEY = "ac6a7d83909f4a25bcd75758222002";
 let locationName = "";
