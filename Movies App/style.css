@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;1,100;1,200&family=Shizuru&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    /* overflow-x: hidden; */
+    color: white;
+}
+
+#movie-container {
+    padding: 15px;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    overflow: auto;
+}
+
+.list::-webkit-scrollbar {
+    display: none;
+}
+
+.list img{
+    object-fit: contain;
+    width: 168px;
+    height: 222px;
+    padding: 5px;
+}
