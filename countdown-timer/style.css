@@ -18,6 +18,10 @@ body{
     margin: 0;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 h1 {
     position: relative;
     font-weight: normal;

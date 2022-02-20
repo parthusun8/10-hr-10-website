@@ -13,6 +13,10 @@ body{
     color: white;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 #movie-container {
     padding: 15px;
 }

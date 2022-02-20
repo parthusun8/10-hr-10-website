@@ -12,6 +12,10 @@ body{
     background-color: rgba(227, 225, 226, 0.32);
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 input{
     outline: none;
     border: none;
