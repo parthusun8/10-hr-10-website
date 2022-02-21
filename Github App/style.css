@@ -11,6 +11,10 @@ body {
     justify-content: center;
     background-color: rgb(11 12 68 / 83%);
 }
+
+body::-webkit-scrollbar{
+    display: none;
+}
 button {
     height: 50px;
     width: 80px;
