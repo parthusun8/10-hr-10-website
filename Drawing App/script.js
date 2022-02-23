@@ -58,6 +58,9 @@ function drawLine(x1, y1, x2, y2){
 increaseBtn.addEventListener("click", ()=> {
     if(size < 30)
         size += 5;
+
+    if(size >= 30)
+        size = 30;
     sizeEl.innerText = size;
 });
 
