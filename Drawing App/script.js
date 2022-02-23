@@ -65,7 +65,7 @@ decreaseBtn.addEventListener("click", ()=> {
     if(size > 0)
         size -= 5;
     
-    if(size == 0){
+    if(size <= 0){
         size = 1;
     }
     sizeEl.innerText = size;
